@@ -15,7 +15,7 @@ import javafx.scene.image.ImageView;
 public class Wall extends ImageView{
     
     private double xPos, yPos, angle, xSize, ySize;
-    
+    private Rectangle wallHB;
     
     public Wall(){
         setImage(new Image("Graphics/wall.png"));
@@ -27,6 +27,7 @@ public class Wall extends ImageView{
         setXSize(xSize);
         setYSize(ySize);
         setAngle(angle);
+        wallHB = new Rectangle(xPos, yPos, xSize, ySize);
         setImage(new Image("Graphics/wall.png"));
     }
 
@@ -83,7 +84,7 @@ public class Wall extends ImageView{
     }
     
     public Vector getNormal(){
-        return new Vector();
+        return new Vector(0, -1);
     }
     
 }
